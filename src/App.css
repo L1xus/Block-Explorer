@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'Academic M54';
+  src: url('../new-athletic-m54-font/NewAthleticM54-31vz.ttf') format('ttf');
+}
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  max-width: 100vw;
+  color: #fff;
+  font-family: 'Academic M54';
+}
+
+.Header {
+  padding: 40px;
+  /* border: 2px solid red; */
+}
+
+h1 {
+  font-size: 5rem;
+  padding-left: 15%;
+}
+
+@media screen and (max-width:966px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 40vw;
+  height: 5vh;
+  outline: none;
+  font-size: 18px;
+  padding-left: 13px;
+  border: none;
+}
+
+button {
+  padding: 2px;
+  border: none;
+  background-color: #fff;
+}
+
+.Status {
+  padding: 0 1.25rem;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.Status-tab {
+  width: 100%;
+}
+
+td {
+  padding: 20px;
+  font-size: 20px;
+  width: 50%;
+}
+
+#tab1 {
+  display: flex;
+  float: right;
+}
+
+.BTxs {
+  padding: 1rem 1.25rem;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.BTx {
+  width: 100%;
+}
+
+#block {
+  display: inline-block;
+}
+
+#time {
+  display: block;
+  margin: 0;
+  color: grey;
+  font-size: 14px;
+}
+
+#recipient {
+  float: right;
+}
+
+#to {
+  display: block;
+  margin: 0;
+}
