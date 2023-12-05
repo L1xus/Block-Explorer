@@ -1,6 +1,6 @@
 # Ethereum Block Explorer
 
-The lessons this week covered the Ethereum JSON-RPC API and the `ethers.js` library giving us the ability to query the Ethereum blockchain and make transactions!
+<!-- The lessons this week covered the Ethereum JSON-RPC API and the `ethers.js` library giving us the ability to query the Ethereum blockchain and make transactions!
 
 Let's put that knowledge to the test by building our very own **Ethereum Block Explorer**!
 
@@ -10,7 +10,7 @@ Blockexplorers give us the ability to view lots of different information about t
   * transactions in a block
   * accounts
   * and many other things
-  
+
 [Etherscan](https://etherscan.io/) is a good example of an Ethereum blockexplorer. Check it out to get familiar with how blockexplorers generally work.
 
 This particular project is very much open-ended. We'll add some challenges here to get your imagination going, but use Etherscan as a guide for features you might consider building in your project.
@@ -23,7 +23,7 @@ After that cd into the base directory of the project and run `npm install` to do
 
 In this project we chose to use React for a front-end and added minimal front-end code to get you going, but feel free to use any front-end stack you like.
 
-Unlike the lessons this week that used the Ethereum JSON-RPC API and the `ethers.js` library to communicate with the Ethereum network, the starter code in this project uses the [AlchemySDK](https://docs.alchemy.com/reference/alchemy-sdk-quickstart?a=eth-bootcamp). The AlchemySDK's core package wraps almost all of the `ethers.js` provider functionality that we learned about and should feel very familiar to you. 
+Unlike the lessons this week that used the Ethereum JSON-RPC API and the `ethers.js` library to communicate with the Ethereum network, the starter code in this project uses the [AlchemySDK](https://docs.alchemy.com/reference/alchemy-sdk-quickstart?a=eth-bootcamp). The AlchemySDK's core package wraps almost all of the `ethers.js` provider functionality that we learned about and should feel very familiar to you.
 
 For example, the following `ethers.js` code
 ```js
@@ -125,4 +125,4 @@ Read more about the above in the [Alchemy SDK Surface docs](https://docs.alchemy
 - Did a pending transaction get mined?
 - What transfers did an address receive this year?
 
-Good luck and have fun!
+Good luck and have fun! -->
