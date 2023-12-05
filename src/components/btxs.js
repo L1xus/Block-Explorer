@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getLatestBlock } from "../scripts";
-import { secondsAgo } from "../utiles/time";
-
+import secondsAgo from "../utiles/time";
+import { shortAddress } from "../utiles/shortAddress";
 
 export default function BTxs() {
     const [latestBlocks, setLatestBlocks] = useState([]);
@@ -32,7 +32,7 @@ export default function BTxs() {
                             <span id='time'>{secondsAgo(block.timestamp)} seconds ago</span>
                         </div>
                         <div id='recipient'>
-                            <span id='tab1'>Fee Recipient  0x1f9....6c326</span>
+                            <span id='tab1'>Fee Recipient  {shortAddress(block.miner)}</span>
                             <span id='time'>12 seconds ago</span>
                         </div>
                     </td>
