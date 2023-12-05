@@ -48,3 +48,17 @@ export async function getLastBlock() {
     return null;
   }
 }
+
+export async function getLatestBlock() {
+  try {
+    const latestBlock = await alchemy.core.getBlockNumber();
+    const latestBlocks = [];
+    for ( let i=0; i<5; i++){
+      latestBlocks.push( await alchemy.core.getBlock(latestBlock - i) );
+    }
+    return latestBlocks;
+  } catch (error) {
+    console.error('Error fetching latest block: ', error);
+    return null;
+  }
+}
