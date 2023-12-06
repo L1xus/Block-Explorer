@@ -29,7 +29,7 @@ export default function Status() {
         <table border='1' className='Status-tab'>
           <tbody>
             <tr>
-              <td>Ether Price: <span id='tab1'> {ethPrice} </span></td>
+              <td><img src={process.env.PUBLIC_URL + '/ethereum-original.svg'} alt='eth-icon'></img>Ether Price: <span id='tab1'> {ethPrice} </span></td>
               <td>Gas Price: <span id='tab1'> {gasPrice} </span></td>
             </tr>
             <tr>

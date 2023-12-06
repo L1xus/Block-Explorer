@@ -1,15 +1,18 @@
 import Status from './components/status';
 import Header from './components/header';
-import BTxs from './components/btxs';
+import Blocks from './components/blocks';
+import Transactions from './components/transactions';
 import './App.css';
-
 
 function App() {
   return (
     <div className="App">
       <Header/>
       <Status/>
-      <BTxs/>
+      <div className='Container'>
+        <Blocks/>
+        <Transactions/>    
+      </div>
     </div>    
   );
 }

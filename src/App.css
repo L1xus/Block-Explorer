@@ -64,22 +64,42 @@ td {
   width: 50%;
 }
 
+.lb {
+  padding: 20px;
+  font-size: 20px;
+}
+
 #tab1 {
   display: flex;
   float: right;
 }
 
-.BTxs {
+.Container {
+  display: flex;
   padding: 1rem 1.25rem;
   max-width: 80rem;
   margin: auto;
 }
 
-.BTx {
-  width: 100%;
+.Blocks, .Transactions {
+  width: 50%;
 }
 
-#block {
+.latestBlocks, .latestTransactions {
+  border: 1px solid gray;
+}
+
+.latestTransactions {
+  border-left: none;
+}
+
+.blockItem, .transactionItem {
+  border-top: 1px solid gray;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.latestBlock, .latestTransaction {
   display: inline-block;
 }
 
@@ -90,11 +110,17 @@ td {
   font-size: 14px;
 }
 
-#recipient {
+.recipient {
+  display: inline;
   float: right;
 }
 
 #to {
   display: block;
   margin: 0;
+}
+
+#blockTime {
+  color: grey;
+  font-size: 16px;
 }

@@ -62,3 +62,19 @@ export async function getLatestBlock() {
     return null;
   }
 }
+
+export async function getLatestTransaction() {
+  try {
+    const latestBlock = await alchemy.core.getBlockNumber();
+    const { transactions, timestamp } = await alchemy.core.getBlock(latestBlock);
+    const latestTransactions = [];
+    for ( let i=0; i<5; i++){
+      latestTransactions.push( await alchemy.core.getTransactionReceipt(transactions[i]))
+    }
+    return {latestTransactions, timestamp};
+  } catch (error) {
+    console.error('Error fetching latest block: ', error);
+    return null;
+  }
+
+}
