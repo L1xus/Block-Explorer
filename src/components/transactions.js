@@ -25,8 +25,9 @@ export default function Transactions() {
                 {latestTransactions.map((tx, index) => (
                     <div key={index} className='transactionItem'>
                         <div className='latestTransaction'>
-                            <span>{shortAddressEnd(tx.transactionHash)}</span>
-                            <span id="time">{secondsAgo(timestamp)}</span>
+                            <img src={process.env.PUBLIC_URL + '/transaction.svg'} alt='transaction-icon' id='icon'></img>
+                            <span id="spaceB">{shortAddressEnd(tx.transactionHash)}</span>
+                            <span id="timeB">{secondsAgo(timestamp)}</span>
                         </div>
                         <div className='recipient'>
                             <span>From {shortAddress(tx.from)}</span>

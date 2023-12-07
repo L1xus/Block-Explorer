@@ -108,6 +108,15 @@ td {
   margin: 0;
   color: grey;
   font-size: 14px;
+  margin-left: 25px;
+}
+
+#timeB {
+  display: block;
+  margin: 0;
+  color: grey;
+  font-size: 14px;
+  margin-left: 40px;
 }
 
 .recipient {
@@ -123,4 +132,22 @@ td {
 #blockTime {
   color: grey;
   font-size: 16px;
+}
+
+#icon {
+  position: absolute;
+}
+
+#space {
+  margin-left: 25px;
+}
+
+#block-icon {
+  position: absolute;
+  margin-top: -7px;
+  margin-left: -10px;
+}
+
+#spaceB {
+  margin-left: 40px;
 }

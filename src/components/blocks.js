@@ -23,8 +23,9 @@ export default function Blocks() {
                 {latestBlocks.map((block, index) => (
                     <div key={index} className='blockItem'>
                         <div className='latestBlock'>
-                            <span>{block.number}</span>
-                            <span id="time">{secondsAgo(block.timestamp)}</span>
+                            <img src={process.env.PUBLIC_URL + '/block.svg'} alt='block-icon' id='block-icon'></img>
+                            <span id="spaceB">{block.number}</span>
+                            <span id="timeB">{secondsAgo(block.timestamp)}</span>
                         </div>
                         <div className='recipient'>
                             <span>Fee Recipient {shortAddress(block.miner)}</span>
