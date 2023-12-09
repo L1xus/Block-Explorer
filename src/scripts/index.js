@@ -78,3 +78,14 @@ export async function getLatestTransaction() {
   }
 
 }
+
+export async function getBlockInfo(input) {
+  try {
+    let blockNum = parseInt(input);
+    const blockNumber = await alchemy.core.getBlock(blockNum);
+    return blockNumber;
+  } catch ( error ) {
+    console.error('Error fetching block number: ', error);
+    return null;
+  }
+}

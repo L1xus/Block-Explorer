@@ -151,3 +151,25 @@ td {
 #spaceB {
   margin-left: 40px;
 }
+
+.BlockInfo {
+  border: 1px solid gray;
+}
+
+.blockBox {
+  padding: 1rem 1.25rem;
+  max-width: 70rem;
+  margin: auto;
+  border: 1px solid red;
+}
+.blockBoxItem {
+  font-size: 0.8rem;
+  display: grid;
+  grid-template-columns: 20% 1fr; 
+  gap: 10px; 
+
+}
+#bbi {
+  color: #7e8ea2;
+  margin-right: 5%;
+}
