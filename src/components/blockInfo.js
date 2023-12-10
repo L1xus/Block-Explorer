@@ -10,6 +10,7 @@ export default function BlockInfo(props) {
       async function fetchData(){
           const blockInfoData = await getBlockInfo(input);
 
+          // console.log(parseInt(blockInfoData.gasLimit._hex));
           setBlockInfo(blockInfoData);
       }
 
@@ -34,7 +35,7 @@ export default function BlockInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Transactions:</h2>
-              {/* <h2 id="bbii">{(blockInfo.transactions)}</h2> */}
+              <h2 id="bbii">{blockInfo.transactions?.length || 0} Transactions</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Fee Recipient:</h2>
@@ -54,7 +55,7 @@ export default function BlockInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Used:</h2>
-              {/* <h2 id="bbii">{blockInfo.gasUsed.hex}</h2> */}
+              <h2 id="bbii">{parseInt(blockInfo.gasUsed?._hex || 0)}</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Target:</h2>
@@ -62,11 +63,11 @@ export default function BlockInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Limit:</h2>
-              {/* <h2 id="bbii">{blockInfo.gasLimit.hex}</h2> */}
+              <h2 id="bbii">{parseInt(blockInfo.gasLimit?._hex || 0)}</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Base Fee Per Gas:</h2>
-              <h2 id="bbii">18749325</h2>
+              <h2 id="bbii">{parseInt(blockInfo.baseFeePerGas?._hex || 0)}</h2>
             </div>
           </div>
         </div>

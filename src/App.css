@@ -153,14 +153,14 @@ td {
 }
 
 .BlockInfo {
-  border: 1px solid gray;
+  padding: 20px;
 }
 
 .blockBox {
   padding: 1rem 1.25rem;
   max-width: 70rem;
   margin: auto;
-  border: 1px solid red;
+  border: 1px solid gray;
 }
 .blockBoxItem {
   font-size: 0.8rem;
