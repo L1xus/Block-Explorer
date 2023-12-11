@@ -5,6 +5,12 @@ export default function Header() {
   const [input, setInput] = useState('');
   const history = useHistory();
 
+  const isValidTransactionHash = (tx) => {
+    const transactionHashRegex = /^0x([A-Fa-f0-9]{64})$/;
+  
+    return transactionHashRegex.test(tx);
+  };
+
   const getInput = (event) => {
     setInput(event.target.value);
   };
@@ -12,10 +18,11 @@ export default function Header() {
   const sub = (event) => {
     event.preventDefault();
     // Use the searchInput state value for further processing (e.g., API calls, etc.)
-    if(Number(input)){
+    if(isValidTransactionHash(input)){
+      history.push(`/tx/${input}`)
+    } else if(Number(input)){
       history.push(`/block/${input}`);
-      console.log('User input:', input);
-    }
+    };
     // You can perform additional actions here using the searchInput value
   };
 

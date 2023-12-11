@@ -20,6 +20,7 @@ export default function BlockInfo(props) {
     return (
         <div className='BlockInfo'>
           <h1>BLOCK EXPLORER</h1>
+          <h3 className="blockNum">Block <span id="bNum">#{blockInfo.number}</span></h3>
           <div className="blockBox">
             <div className="blockBoxItem">
               <h2 id="bbi">Block Height:</h2>

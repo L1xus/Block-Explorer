@@ -156,6 +156,16 @@ td {
   padding: 20px;
 }
 
+.blockNum {
+  padding: 1rem 1.25rem;
+  max-width: 70rem;
+  margin: auto;
+  font-size: 1.5rem;
+}
+#bNum {
+  color: #7e8ea2;
+}
+
 .blockBox {
   padding: 1rem 1.25rem;
   max-width: 70rem;

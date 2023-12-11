@@ -89,3 +89,14 @@ export async function getBlockInfo(input) {
     return null;
   }
 }
+
+export async function getTransactionInfo(input) {
+  try {
+    let tx = input;
+    const txInfo = await alchemy.core.getTransactionReceipt(tx);
+    return txInfo;
+  } catch ( error ) {
+    console.error('Error fetching transaction details: ', error);
+    return null;
+  }
+}
