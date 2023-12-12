@@ -6,8 +6,8 @@ export default function TransactionInfo(props) {
     const { match } = props;
     const input = match.params.input;
     const [txInfo, setTxInfo] = useState('');
-    const gas = !isNaN(txInfo.effectiveGasPrice)?(parseInt(txInfo.effectiveGasPrice._hex.substring(2))):null;
-  console.log(gas);
+    // const gas = !isNaN(txInfo.effectiveGasPrice)?(parseInt(txInfo.effectiveGasPrice._hex.substring(2))):null;
+  console.log(parseInt((txInfo.effectiveGasPrice?._hex.substring(2)),16));
     useEffect(()=> {
       async function fetchData(){
           const txInfoData = await getTransactionInfo(input);
@@ -63,7 +63,7 @@ export default function TransactionInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Price:</h2>
-              <h2 id="bbii">{!isNaN(txInfo.gasUsed)? Utils.formatEther(parseInt(txInfo.gasUsed._hex.substring(2))): null}</h2>
+              <h2 id="bbii">{!isNaN(txInfo.effectiveGasPrice)? Utils.formatEther(parseInt((txInfo.effectiveGasPrice?._hex.substring(2)),16)): null} ETH</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Limit:</h2>
