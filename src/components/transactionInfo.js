@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { getTransactionInfo } from "../scripts";
+import { Utils } from "alchemy-sdk";
 
 export default function TransactionInfo(props) {
     const { match } = props;
     const input = match.params.input;
     const [txInfo, setTxInfo] = useState('');
-
+    const gas = !isNaN(txInfo.effectiveGasPrice)?(parseInt(txInfo.effectiveGasPrice._hex.substring(2))):null;
+  console.log(gas);
     useEffect(()=> {
       async function fetchData(){
           const txInfoData = await getTransactionInfo(input);
@@ -57,11 +59,11 @@ export default function TransactionInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Tx Fee:</h2>
-              <h2 id="bbii">{txInfo.gasUsed?._hex}</h2>
+              <h2 id="bbii">{(!isNaN(txInfo.effectiveGasPrice) && !isNaN(txInfo.gasUsed))? Utils.formatEther((txInfo.effectiveGasPrice * txInfo.gasUsed).toString()): null} ETH</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Price:</h2>
-              {/* <h2 id="bbii">{parseInt(blockInfo.gasUsed?._hex || 0)}</h2> */}
+              <h2 id="bbii">{!isNaN(txInfo.gasUsed)? Utils.formatEther(parseInt(txInfo.gasUsed._hex.substring(2))): null}</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Gas Limit:</h2>
