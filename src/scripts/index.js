@@ -101,3 +101,23 @@ export async function getTransactionInfo(input) {
     return null;
   }
 }
+
+export async function getAddressInfo(input) {
+  try {
+    let address = input;
+    const addressStatus = await alchemy.core.isContractAddress(address);
+    const addressBalance = await alchemy.core.getBalance(address, 'latest');
+    const addressTxCount = await alchemy.core.getTransactionCount(address);
+    const addressInfo = await alchemy.core.getAssetTransfers({
+      fromBlock: "0x0",
+      fromAddress: input,
+      toAddress: input,
+      maxCount: 5,
+      excludeZeroValue: true,
+    })
+    return {addressStatus, addressBalance, addressTxCount, addressInfo};
+  } catch ( error ) {
+    console.error('Error fetching Address details: ', error);
+    return null;
+  }
+}

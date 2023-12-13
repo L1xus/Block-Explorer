@@ -58,7 +58,7 @@ button {
   width: 100%;
 }
 
-td {
+.tdState {
   padding: 20px;
   font-size: 20px;
   width: 50%;
@@ -152,7 +152,7 @@ td {
   margin-left: 40px;
 }
 
-.BlockInfo {
+.BlockInfo, .AddressInfo {
   padding: 20px;
 }
 
@@ -192,4 +192,25 @@ td {
 #txConf {
   border: 1px solid #fff;
   width: 45%;
+}
+
+.addressStatus {
+  max-width: 70rem;
+  margin: auto;
+  text-align: center;
+}
+
+.addressBox {
+  padding: 1rem 1.25rem;
+  max-width: 70rem;
+  margin: auto;
+  border: 1px solid gray;
+}
+
+.AddressTab {
+  width: 100%;
+}
+
+th {
+  text-align: left;
 }

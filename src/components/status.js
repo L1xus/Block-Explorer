@@ -29,22 +29,22 @@ export default function Status() {
         <table border='1' className='Status-tab'>
           <tbody>
             <tr>
-              <td>
+              <td className='tdState'>
                 <img src={process.env.PUBLIC_URL + '/ethereum-original.svg'} alt='eth-icon' id='icon'></img>
                 <span id='space'>Ether Price:</span> 
                 <span id='tab1'> {ethPrice} </span></td>
-              <td>
+              <td className='tdState'>
                 <img src={process.env.PUBLIC_URL + '/gas-price.svg'} alt='gas-icon' id='icon'></img>
                 <span id='space'>Gas Price:</span>
                 <span id='tab1'> {gasPrice} </span>
                 </td>
             </tr>
             <tr>
-              <td>
+              <td className='tdState'>
                 <img src={process.env.PUBLIC_URL + '/market-cap.svg'} alt='cap-icon' id='icon'></img>
                 <span id='space'>Market Cap:</span> 
                 <span id='tab1'> {marketCap} </span></td>
-              <td>
+              <td className='tdState'>
                 <img src={process.env.PUBLIC_URL + '/last-block.svg'} alt='lblock-icon' id='icon'></img>
                 <span id='space'>Last Finalized Block:</span>  
                 <span id='tab1'> {lastBlock} </span>
