@@ -183,3 +183,13 @@ td {
   color: #7e8ea2;
   margin-right: 5%;
 }
+#txData {
+  width: 100%;
+  height: 100%;
+  background-color: #282c34;
+  color: #fff;
+}
+#txConf {
+  border: 1px solid #fff;
+  width: 45%;
+}

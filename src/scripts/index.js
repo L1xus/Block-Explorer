@@ -92,9 +92,10 @@ export async function getBlockInfo(input) {
 
 export async function getTransactionInfo(input) {
   try {
-    let tx = input;
-    const txInfo = await alchemy.core.getTransactionReceipt(tx);
-    return txInfo;
+    let txHash = input;
+    const ttx = await alchemy.core.getTransaction(txHash);
+    const tx = await alchemy.core.getTransactionReceipt(txHash);
+    return {tx, ttx};
   } catch ( error ) {
     console.error('Error fetching transaction details: ', error);
     return null;
