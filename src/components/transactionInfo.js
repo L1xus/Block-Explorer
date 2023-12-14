@@ -12,7 +12,6 @@ export default function TransactionInfo(props) {
       async function fetchData(){
           const txInfoData = await getTransactionInfo(input);
 
-          console.log(txInfoData);
           setTxInfo(txInfoData.tx);
           setTx_Info(txInfoData.ttx);
       }
@@ -56,7 +55,7 @@ export default function TransactionInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Value:</h2>
-              <h2 id="bbii">{!isNaN(tx_Info.value)? Utils.formatEther(parseInt((tx_Info.value?._hex.substring(2)),16)): null} ETH</h2>
+              <h2 id="bbii">{!isNaN(tx_Info.value)? parseInt((tx_Info.value?._hex.substring(2)),16)/10**18: null} ETH</h2>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Tx Fee:</h2>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAddressInfo } from "../scripts";
+import { shortAddress, shortAddressEnd } from "../utiles/shortAddress";
 
 export default function AddressInfo(props) {
     const { match } = props;
@@ -17,7 +18,7 @@ export default function AddressInfo(props) {
             setAddressBalance(addressInfoData.addressBalance);
             setAddressTxCount(addressInfoData.addressTxCount);
             setAddressInfo(addressInfoData.addressInfo);
-            console.log((await addressInfoData.addressInfo));
+            console.log((addressInfoData.addressInfo));
         }
 
         fetchData();
@@ -46,13 +47,16 @@ export default function AddressInfo(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>dsst5</td>
-                            <td>ewg</td>
-                            <td>wrt</td>
-                            <td>wt4w</td>
-                            <td>4wy5e</td>
-                        </tr>
+                        {addressInfo.transfers && addressInfo.transfers.map((address, index) => (
+                            <tr key={index} className="AddressTr">
+                                <td>{shortAddressEnd(address.hash)}</td>
+                                <td>{parseInt((address.blockNum.substring(2)), 16)}</td>
+                                <td>{shortAddress(address.from)}</td>
+                                <td>{shortAddress(address.to)}</td>
+                                <td>{address.value} ETH</td>
+                             </tr>
+                        ))}
+
                     </tbody>
                 </table>
             </div>

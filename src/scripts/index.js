@@ -111,9 +111,11 @@ export async function getAddressInfo(input) {
     const addressInfo = await alchemy.core.getAssetTransfers({
       fromBlock: "0x0",
       fromAddress: input,
-      toAddress: input,
-      maxCount: 5,
+      // toAddress: input,
+      // maxCount: 5,
+      order: "desc",
       excludeZeroValue: true,
+      category: ["erc721", "erc1155", "external", "internal", "erc20", "specialnft"],
     })
     return {addressStatus, addressBalance, addressTxCount, addressInfo};
   } catch ( error ) {
