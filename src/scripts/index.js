@@ -81,7 +81,10 @@ export async function getLatestTransaction() {
 
 export async function getBlockInfo(input) {
   try {
-    let blockNum = parseInt(input);
+    let blockNum = input;
+    if(!input.startsWith('0x')){
+      blockNum = parseInt(input);
+    };
     const blockNumber = await alchemy.core.getBlock(blockNum);
     return blockNumber;
   } catch ( error ) {

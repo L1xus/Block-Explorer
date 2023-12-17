@@ -215,3 +215,14 @@ th {
   text-align: left;
   font-size: 1.1rem;
 }
+
+.koksal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}

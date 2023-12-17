@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAddressInfo } from "../scripts";
 import { shortAddress, shortAddressEnd } from "../utiles/shortAddress";
+import { Link } from "react-router-dom";
 
 export default function AddressInfo(props) {
     const { match } = props;
@@ -26,7 +27,9 @@ export default function AddressInfo(props) {
 
     return (
         <div className="AddressInfo">
-            <h1>BLOCK EXPLORER</h1>
+            <Link to="/" className='link'>
+                <h1>BLOCK EXPLORER</h1>
+            </Link>
             <div className="addressStatus">
                 {addressStatus ? <h2 id="adc">Contract: {input}</h2> : <h2 id="adc">Address: {input}</h2>}
                 <h3 id="adb">
@@ -49,10 +52,26 @@ export default function AddressInfo(props) {
                     <tbody>
                         {addressInfo.transfers && addressInfo.transfers.map((address, index) => (
                             <tr key={index} className="AddressTr">
-                                <td>{shortAddressEnd(address.hash)}</td>
-                                <td>{parseInt((address.blockNum.substring(2)), 16)}</td>
-                                <td>{shortAddress(address.from)}</td>
-                                <td>{shortAddress(address.to)}</td>
+                                <td>
+                                    <Link to={`/tx/${address.hash}`} className='link'>
+                                        {shortAddressEnd(address.hash)}
+                                    </Link>
+                                </td>
+                                <td>
+                                    <Link to={`/block/${parseInt((address.blockNum.substring(2)), 16)}`} className='link'>
+                                        {parseInt((address.blockNum.substring(2)), 16)}
+                                    </Link>
+                                </td>
+                                <td>
+                                    <Link to={`/address/${address.from}`} className='link'>
+                                        {shortAddress(address.from)}
+                                    </Link>
+                                </td>
+                                <td>
+                                    <Link to={`/address/${address.to}`} className='link'>
+                                        {shortAddress(address.to)}
+                                    </Link>
+                                </td>
                                 <td>{address.value} ETH</td>
                              </tr>
                         ))}

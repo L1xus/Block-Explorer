@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getBlockInfo } from "../scripts";
+import { Link } from "react-router-dom";
 
 export default function BlockInfo(props) {
     const { match } = props;
@@ -19,7 +20,9 @@ export default function BlockInfo(props) {
 
     return (
         <div className='BlockInfo'>
-          <h1>BLOCK EXPLORER</h1>
+          <Link to="/" className='link'>
+            <h1>BLOCK EXPLORER</h1>
+          </Link>
           <h3 className="blockNum">Block <span id="bNum">#{blockInfo.number}</span></h3>
           <div className="blockBox">
             <div className="blockBoxItem">
@@ -40,15 +43,21 @@ export default function BlockInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Fee Recipient:</h2>
-              <h2 id="bbii">{blockInfo.miner}</h2>
+              <Link to={`/address/${blockInfo.miner}`} className='link'>
+                <h2 id="bbii">{blockInfo.miner}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Hash:</h2>
-              <h2 id="bbii">{blockInfo.hash}</h2>
+              <Link to={`/block/${blockInfo.hash}`} className='link'>
+                <h2 id="bbii">{blockInfo.hash}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Parent Hash:</h2>
-              <h2 id="bbii">{blockInfo.parentHash}</h2>
+              <Link to={`/block/${blockInfo.parentHash}`} className='link'>
+                <h2 id="bbii">{blockInfo.parentHash}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Nonce:</h2>

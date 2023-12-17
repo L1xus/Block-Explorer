@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getTransactionInfo } from "../scripts";
 import { Utils } from "alchemy-sdk";
+import { Link } from "react-router-dom";
 
 export default function TransactionInfo(props) {
     const { match } = props;
@@ -26,7 +27,9 @@ export default function TransactionInfo(props) {
   
     return (
         <div className='BlockInfo'>
-          <h1>BLOCK EXPLORER</h1>
+          <Link to="/" className='link'>
+            <h1>BLOCK EXPLORER</h1>
+          </Link>
           <h3 className="blockNum">Transaction Details</h3>
           <div className="blockBox">
             <div className="blockBoxItem">
@@ -39,7 +42,9 @@ export default function TransactionInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Block:</h2>
-              <h2 id="bbii">{txInfo.blockNumber}</h2>
+              <Link to={`/block/${txInfo.blockNumber}`} className='link'>
+                <h2 id="bbii">{txInfo.blockNumber}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Confirmation:</h2>
@@ -47,11 +52,15 @@ export default function TransactionInfo(props) {
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">From:</h2>
-              <h2 id="bbii">{txInfo.from}</h2>
+              <Link to={`/address/${txInfo.from}`} className='link'>
+                <h2 id="bbii">{txInfo.from}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">To:</h2>
-              <h2 id="bbii">{txInfo.to}</h2>
+              <Link to={`/address/${txInfo.to}`} className='link'>
+                <h2 id="bbii">{txInfo.to}</h2>
+              </Link>
             </div>
             <div className="blockBoxItem">
               <h2 id="bbi">Value:</h2>
