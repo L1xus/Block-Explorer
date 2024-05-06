@@ -31,7 +31,12 @@ export default function AddressInfo(props) {
                 <h1>BLOCK EXPLORER</h1>
             </Link>
             <div className="addressStatus">
-                {addressStatus ? <h2 id="adc">Contract: {input}</h2> : <h2 id="adc">Address: {input}</h2>}
+                <div className="giftAdded">
+                    <Link to={`/winner`} className='link'>
+                        <img src={process.env.PUBLIC_URL + '/giftbox.png'} alt='gift-icon' id='gift'></img>
+                    </Link>
+                    {addressStatus ? <h2 id="adc">Contract: {input}</h2> : <h2 id="adc">Address: {input}</h2>}
+                </div>
                 <h3 id="adb">
                     <span style={{color: '#7e8ea2'}}>ETH Balance: </span>    
                     {addressBalance?._hex ? (parseInt(((addressBalance?._hex).substring(2)),16))/10**18 + ' ETH' : ''}

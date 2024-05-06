@@ -4,6 +4,7 @@ import TransactionInfo from '../components/transactionInfo';
 import AddressInfo from '../components/addressInfo';
 import Home from '../components/home';
 import NoPage from '../components/noPage';
+import GiftPage from '../components/giftPage';
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
         <Route exact path="/block/:input" component={BlockInfo} />
         <Route exact path="/tx/:input" component={TransactionInfo} />
         <Route exact path="/address/:input" component={AddressInfo} />
+        <Route exact path="/winner" component={GiftPage} />
         <Route exact path="*" component={NoPage}/>
       </Switch>
     </Router>

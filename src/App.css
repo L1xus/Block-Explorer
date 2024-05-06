@@ -226,3 +226,33 @@ th {
   color: #fff;
   text-decoration: none;
 }
+
+.giftAdded {
+  display: inline-block;
+  position: relative;
+}
+
+#gift {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#gift:hover {
+  opacity: 1;
+}
+
+#adc {
+  margin-left: 30px;
+}
+
+.giftWinner {
+  padding: 1rem 1.25rem;
+  max-width: 70rem;
+  margin: auto;
+  text-align: center;
+}
