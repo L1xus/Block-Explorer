@@ -256,3 +256,8 @@ th {
   margin: auto;
   text-align: center;
 }
+
+#gibWinner {
+  width: 450px;
+  height: 180px;
+}
